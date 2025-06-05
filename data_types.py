@@ -1,37 +1,52 @@
-number = 151
-number2 = 251
+# Integers: basic arithmetic
+first_pokemon_number = 151  # Mew
+second_pokemon_number = 251  # Celebi
 
-print(number2 - number)
+# Subtracting two integers → result is also an integer
+print(second_pokemon_number - first_pokemon_number)  # Output: 100
 
-string_of_numbers = "386"
-string_of_numbers2 = "493"
+# Strings that look like numbers
+string_number_one = "386"  # Deoxys
+string_number_two = "493"  # Arceus
 
-print(string_of_numbers + string_of_numbers2)
+# String concatenation: just joins the text
+print(string_number_one + string_number_two)  # Output: '386493'
 
-print(int(string_of_numbers) + int(string_of_numbers2))
+# Converting strings to integers and then adding them
+print(int(string_number_one) + int(string_number_two))  # Output: 879
 
-print(type(string_of_numbers))
+# Checking the type of a string
+print(type(string_number_one))  # Output: <class 'str'>
 
-number3 = 3
-number4 = 9
-number5 = number4 / number3
+# More integer division
+dividend = 9
+divisor = 3
+division_result = dividend / divisor  # Division always returns a float in Python 3
 
-print(number5)
+print(division_result)  # Output: 3.0
 
-print(type(number3), type(number4), type(number5))
+# Print the types: dividend and divisor are int, result is float
+print(type(divisor), type(dividend), type(division_result))  # Output: <class 'int'> <class 'int'> <class 'float'>
 
-number6 = int(number5)
+# Convert float back to int (truncates decimal)
+truncated_result = int(division_result)
 
-print(number6)
+print(truncated_result)  # Output: 3
 
-string_of_numbers3 = "six four nine"
+# String with alphabetic words instead of numeric digits
+words_as_numbers = "six four nine" # Genesect
 
-print(type(string_of_numbers3))
-print(dir(string_of_numbers3))
+# Check the data type
+print(type(words_as_numbers))  # Output: <class 'str'>
 
-print(string_of_numbers3.capitalize())
-print(string_of_numbers3.upper())
-print(string_of_numbers3.title())
+# Show available string methods
+print(dir(words_as_numbers))
 
-print(string_of_numbers3.isalnum())
-print(string_of_numbers.isalnum())
+# Demonstrate string methods
+print(words_as_numbers.capitalize())  # Capitalize first letter: 'Six four nine'
+print(words_as_numbers.upper())       # All uppercase: 'SIX FOUR NINE'
+print(words_as_numbers.title())       # Title case: 'Six Four Nine'
+
+# Check if string is alphanumeric (no spaces or symbols)
+print(words_as_numbers.isalnum())     # False: contains spaces
+print(string_number_one.isalnum())    # True: only digits
