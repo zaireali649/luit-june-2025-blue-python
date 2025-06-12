@@ -1,7 +1,9 @@
 name: Sync Repo Prod
 
 on:
-  pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
   sync_repo:
