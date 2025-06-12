@@ -1,0 +1,24 @@
+name: Sync Repo Prod
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync_repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up AWS CLI
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Syncing Repo to Prod
+        run: |
+          aws s3 sync . s3://${{ secrets.S3_BUCKET_NAME }}/${{ secrets.S3_PATH_PROD }}
